@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_digizilla_kanban" model="ir.ui.view">
+        <field name="name">digizilla.model.kanban</field>
+        <field name="model">digizilla.model</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <templates>
+                    <t t-name="kanban_box">
+                        <div class="oe_kanban_global_click">
+                            <div class="oe_kanban_details">
+                                <field name="name"/>
+                                <field name="joining_date"/>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+       <record id="view_digizilla_list" model="ir.ui.view">
+		<field name="name">digizilla.model.list</field>
+		<field name="model">digizilla.model</field>
+		<field name="arch" type="xml">
+			<tree>
+				<field name="name"/>
+				<field name="gender"/>
+				<field name="country"/>
+				<field name="joining_date"/>
+				<field name="company"/>
+			</tree>
+		</field>
+	</record>
+
+       <record id="view_digizilla_form" model="ir.ui.view">
+    <field name="name">digizilla.model.form</field>
+    <field name="model">digizilla.model</field>
+    <field name="arch" type="xml">
+        <form>
+            <header>
+                <button name="action_save_and_log_changes" string="Save and Log Changes" type="object" class="btn-primary"/>
+                <button name="action_cancel" string="Cancel" type="object" special="cancel"/>
+            </header>
+            <sheet>
+                <group>
+                    <group>
+                        <field name="name"/>
+                        <field name="gender"/>
+                        <field name="country"/>
+                        <field name="joining_date"/>
+                    </group>
+                    <group>
+                        <field name="tags"/>
+                        <field name="customers"/>
+                        <field name="company"/>
+                    </group>
+                </group>
+                <notebook>
+                    <page string="Notes">
+                        <field name="notes"/>
+                    </page>
+                    <page string="Comments">
+                        <field name="comments"/>
+                    </page>
+                </notebook>
+            </sheet>
+            <data __validate__="1">
+                <xpath expr="//sheet" position="inside">
+                    <xpath expr="//div[@name='button_box']" position="before">
+                        <script type="text/javascript" src="/odoo_task/static/src/js/assets_backend.js"/>
+                    </xpath>
+                </xpath>
+            </data>
+        </form>
+    </field>
+</record>
+
+
+    </data>
+</odoo>

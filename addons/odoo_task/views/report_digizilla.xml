@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="report_digizilla">
+            <t t-call="web.html_container">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <div class="oe_structure"/>
+                        <div class="row">
+                            <div class="col-12">
+                                <h1>Digizilla Report</h1>
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Gender</th>
+                                            <th>Country</th>
+                                            <th>Joining Date</th>
+                                            <th>Tags</th>
+                                            <th>Customers</th>
+                                            <th>Company</th>
+                                            <th>Notes</th>
+                                            <th>Comments</th>
+                                            <th>Log Messages</th>
+
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <t t-foreach="docs" t-as="record">
+                                            <tr>
+                                                <td><t t-esc="record.name"/></td>
+                                                <td><t t-esc="record.gender"/></td>
+                                                <td><t t-esc="record.country"/></td>
+                                                <td><t t-esc="record.joining_date"/></td>
+                                                <td><t t-esc="record.tags"/></td>
+                                                <td><t t-esc="record.customers"/></td>
+                                                <td><t t-esc="record.company"/></td>
+                                                <td><t t-esc="record.notes"/></td>
+                                                <td><t t-esc="record.comments"/></td>
+                                                <td><t t-esc="record.log_messages"/></td>
+
+                                            </tr>
+                                        </t>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

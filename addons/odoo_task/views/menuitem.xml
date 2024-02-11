@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem id="menu_digizilla" name="Digizilla" sequence="10">
+        <menuitem
+            id="menu_digizilla_sub_menu"
+            name="Digizilla Sub Menu"
+            sequence="10"
+            parent="menu_digizilla"
+            action="action_digizilla"
+        />
+    </menuitem>
+
+     <record model="ir.actions.act_window" id="action_digizilla">
+        <field name="name">Digizilla</field>
+        <field name="res_model">digizilla.model</field>
+        <field name="view_mode">kanban,form</field>
+        <field name="view_id" ref="view_digizilla_kanban" />
+    </record>
+
+</odoo>
